@@ -1,30 +1,36 @@
-// Controle do contador de curtidas
 let curtidas = 0;
 
 function curtirConteudo() {
     curtidas++;
-    const contador = document.getElementById('contador-curtidas');
-    const btn = document.querySelector('.btn-curtir');
-    contador.innerText = curtidas;
-    
-    // Animação de clique no botão curtir
-    btn.classList.add('pulse');
-    setTimeout(() => {
-        btn.classList.remove('pulse');
-    }, 300);
+    document.getElementById('contador-curtidas').innerText = curtidas;
 }
 
-// Alternador do modo Preto e Branco
-function alternarPretoBranco() {
-    // Liga/Desliga a classe de escala de cinza na tag HTML
-    const htmlElement = document.documentElement;
-    htmlElement.classList.toggle('modo-pb');
+// ====== SISTEMA DE TEMA ESCURO/CLARO ======
+
+// Verifica o armazenamento local ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    const temaSalvo = localStorage.getItem("tema");
+    const body = document.body;
+    const textoTema = document.getElementById('texto-tema');
+
+    if (temaSalvo === "dark") {
+        body.classList.add("dark-mode");
+        if (textoTema) textoTema.innerText = 'Modo Claro';
+    }
+});
+
+// Função que o botão executa ao ser clicado
+function alternarTema() {
+    const body = document.body;
+    const textoTema = document.getElementById('texto-tema');
     
-    // Altera dinamicamente o texto exibido no botão
-    const textoBotao = document.getElementById('texto-pb');
-    if (htmlElement.classList.contains('modo-pb')) {
-        textoBotao.innerText = "Modo Colorido";
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
+        textoTema.innerText = 'Modo Claro';
+        localStorage.setItem("tema", "dark");
     } else {
-        textoBotao.innerText = "Modo P&B";
+        textoTema.innerText = 'Modo Escuro';
+        localStorage.setItem("tema", "light");
     }
 }

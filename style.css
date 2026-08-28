@@ -1,43 +1,45 @@
-/* ==========================================
-   ESTILOS DO BOTÃO PRETO E BRANCO (P&B)
-   ========================================== */
-
-.btn-toggle-pb {
+/* Estilização do botão de alternar tema */
+.btn-toggle-tema {
     position: fixed;
     top: 20px;
-    right: 20px;
+    right: 140px; /* Ajuste para não sobrepor o botão de curtir */
     z-index: 1000;
-    padding: 10px 16px;
-    background-color: #111;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 30px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
+    padding: 10px 15px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 20px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease, background-color 0.3s ease;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
-.btn-toggle-pb:hover {
-    transform: scale(1.05);
-    background-color: #222;
+/* Alterações visuais quando o modo escuro estiver ativo */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
 }
 
-.btn-toggle-pb:active {
-    transform: scale(0.95);
+body.dark-mode .container {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
 }
 
-/* Transição suave de cor na página inteira */
-html {
-    transition: filter 0.5s ease-in-out;
+body.dark-mode .stat-card {
+    background-color: #2a2a2a;
+    border-color: #444;
 }
 
-/* Classe aplicada via JavaScript para ativar o efeito */
-.modo-pb {
-    filter: grayscale(100%);
+body.dark-mode h1, 
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode .stat-numero {
+    color: #ffffff;
+}
+
+body.dark-mode .btn-toggle-tema {
+    background-color: #333;
+    color: #fff;
+    border-color: #555;
 }
