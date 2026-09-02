@@ -2,17 +2,22 @@ function alternarTema() {
     const body = document.body;
     const textoTema = document.getElementById("texto-tema");
     
-    // Verifica se o modo claro já está ativo
+    // Se o modo claro já estiver ativo, remove e volta para o escuro
     if (body.getAttribute("data-theme") === "light") {
         body.removeAttribute("data-theme");
-        if (textoTema) textoTema.innerText = "Modo Escuro";
+        if (textoTema) {
+            textoTema.innerText = "Modo Escuro";
+        }
     } else {
+        // Se estiver no escuro, ativa o modo claro
         body.setAttribute("data-theme", "light");
-        if (textoTema) textoTema.innerText = "Modo Claro";
+        if (textoTema) {
+            textoTema.innerText = "Modo Claro";
+        }
     }
 }
 
-// Garante o funcionamento do botão de curtir original do seu HTML
+// Inicializador padrão para o botão de curtir original do seu documento
 let totalCurtidas = 0;
 function curtirConteudo() {
     totalCurtidas++;

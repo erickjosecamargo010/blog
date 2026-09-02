@@ -1,28 +1,63 @@
-/* Definição do Modo Escuro Padrão */
+/* ==========================================================================
+   SISTEMA DE CORES (MODO ESCURO - PADRÃO)
+   ========================================================================== */
 :root {
-    --fundo-cor: #0b0c10;
-    --texto-cor: #ffffff;
-    --card-fundo: #1f2833;
-    --detalhe-ouro: #c5a059;
+    --fundo-principal: #0b0c10;
+    --fundo-card: #1f2833;
+    --cor-ouro: #c5a059;
+    --texto-titulo: #ffffff;
+    --texto-corpo: #95a5a6;
+    --cor-borda: rgba(197, 160, 89, 0.2);
 }
 
-/* Definição do Modo Claro (Ativado pelo JavaScript) */
+/* ==========================================================================
+   SISTEMA DE CORES (MODO CLARO - ADICIONADO)
+   ========================================================================== */
 [data-theme="light"] {
-    --fundo-cor: #f4f6f9;
-    --texto-cor: #1a1a1a;
-    --card-fundo: #ffffff;
-    --detalhe-ouro: #b18c43;
+    --fundo-principal: #f4f6f9;
+    --fundo-card: #ffffff;
+    --cor-ouro: #b18c43;
+    --texto-titulo: #1a1a1a;
+    --texto-corpo: #5c616a;
+    --cor-borda: rgba(177, 140, 67, 0.3);
 }
 
-/* Aplicação básica das variáveis nos seletores nativos */
+/* ==========================================================================
+   MAPEAMENTO DAS VARIÁVEIS NOS ELEMENTOS EXISTENTES
+   ========================================================================== */
 body {
-    background-color: var(--fundo-cor);
-    color: var(--texto-cor);
+    background-color: var(--fundo-principal);
+    color: var(--texto-titulo);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.stat-card, .conteudo-blog {
-    background-color: var(--card-fundo);
-    transition: background-color 0.3s ease;
+/* Aplica o fundo dos blocos e botões de forma dinâmica */
+.stat-card, 
+.conteudo-blog, 
+.lista-atributos li, 
+.btn-toggle-tema, 
+.btn-curtir {
+    background-color: var(--fundo-card);
+    border: 1px solid var(--cor-borda);
+    color: var(--texto-titulo);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* Mapeia as cores de destaque e marcas de texto */
+.stat-numero, 
+.num-lista, 
+.badge, 
+.tag-imagem, 
+.destaque-titulo {
+    color: var(--cor-ouro);
+    transition: color 0.3s ease;
+}
+
+/* Mapeia os textos secundários e descrições */
+.subtitulo, 
+.conteudo-blog p, 
+.texto-lista p, 
+footer p {
+    color: var(--texto-corpo);
+    transition: color 0.3s ease;
+}
