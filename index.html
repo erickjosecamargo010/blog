@@ -4,29 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog do Erick J.</title>
-    <!-- Importação das fontes do Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="container header-content">
             <h1>Blog do Erick J.</h1>
-            <button id="theme-toggle" aria-label="Alternar modo claro e escuro">🌓</button>
+            <button id="theme-toggle" aria-label="Alternar modo claro e escuro" aria-pressed="false">
+                <span class="theme-icon">🌓</span>
+            </button>
         </div>
     </header>
 
     <main class="container">
         <article class="post-card">
             <h2>Bem-vindo ao meu novo blog estilizado</h2>
-            <p class="author">Por Erick J.</p>
+            <p class="author">Por <span class="author-name">Erick J.</span></p>
             <p>Este layout conta com modo escuro acessível, tipografia refinada e alta performance de leitura.</p>
         </article>
     </main>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Blog do Erick J. Criado por Erick J.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-

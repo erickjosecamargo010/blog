@@ -1,16 +1,23 @@
-const toggleButton = document.getElementById('theme-toggle');
-const htmlElement = document.documentElement;
+const themeToggleBtn = document.getElementById('theme-toggle');
 
-// Verifica preferência salva ou do sistema operacional
-const savedTheme = localStorage.getItem('theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+// Verifica preferência salva ou do sistema do usuário
+const savedTheme = localStorage.getItem('theme');
+const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-htmlElement.setAttribute('data-theme', savedTheme);
+if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggleBtn.setAttribute('aria-pressed', 'true');
+} else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggleBtn.setAttribute('aria-pressed', 'false');
+}
 
-toggleButton.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme');
+// Alternar tema
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    htmlElement.setAttribute('data-theme', newTheme);
+
+    document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
+    themeToggleBtn.setAttribute('aria-pressed', newTheme === 'dark');
 });

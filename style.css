@@ -1,81 +1,138 @@
-/* Definição de Variáveis para Cores (Modo Claro Padrão) */
+/* Variáveis de Tema (Modo Claro Padrão) */
 :root {
-    --bg-color: #f7f9fc;
-    --card-bg: #ffffff;
-    --text-color: #2d3748;
-    --title-color: #1a202c;
-    --accent-color: #3182ce;
+    --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --accent-color: #4a90e2;
     --border-color: #e2e8f0;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
 }
 
-/* Variáveis para o Modo Escuro */
+/* Variáveis do Modo Escuro */
 [data-theme="dark"] {
-    --bg-color: #121824;
-    --card-bg: #1e293b;
-    --text-color: #cbd5e1;
-    --title-color: #f8fafc;
-    --accent-color: #60a5fa;
+    --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    --card-bg: rgba(30, 41, 59, 0.85);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --accent-color: #38bdf8;
     --border-color: #334155;
+    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* Reset básico e Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--title-color);
+    font-family: var(--font-body);
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 .container {
+    width: 90%;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 0 20px;
 }
 
+/* Header */
 header {
-    background-color: var(--card-bg);
+    padding: 2rem 0;
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
 .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
 }
 
-.post-card {
-    background-color: var(--card-bg);
-    border: 1px solid var(--border-color);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: var(--text-primary);
 }
 
-.author {
-    font-size: 0.85rem;
-    color: var(--accent-color);
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-
+/* Botão do Tema */
 #theme-toggle {
-    background: none;
-    border: 1px solid var(--border-color);
+    background: transparent;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
     font-size: 1.2rem;
     cursor: pointer;
-    padding: 0.5rem;
-    border-radius: 50%;
-    transition: transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 #theme-toggle:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+}
+
+#theme-toggle:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Conteúdo Principal */
+main {
+    flex: 1;
+    padding: 3rem 0;
+}
+
+.post-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+}
+
+.post-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.author {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.author-name {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.post-card p {
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
 }
