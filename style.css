@@ -1,63 +1,81 @@
-/* ==========================================================================
-   SISTEMA DE CORES (MODO ESCURO - PADRÃO)
-   ========================================================================== */
+/* Definição de Variáveis para Cores (Modo Claro Padrão) */
 :root {
-    --fundo-principal: #0b0c10;
-    --fundo-card: #1f2833;
-    --cor-ouro: #c5a059;
-    --texto-titulo: #ffffff;
-    --texto-corpo: #95a5a6;
-    --cor-borda: rgba(197, 160, 89, 0.2);
+    --bg-color: #f7f9fc;
+    --card-bg: #ffffff;
+    --text-color: #2d3748;
+    --title-color: #1a202c;
+    --accent-color: #3182ce;
+    --border-color: #e2e8f0;
 }
 
-/* ==========================================================================
-   SISTEMA DE CORES (MODO CLARO - ADICIONADO)
-   ========================================================================== */
-[data-theme="light"] {
-    --fundo-principal: #f4f6f9;
-    --fundo-card: #ffffff;
-    --cor-ouro: #b18c43;
-    --texto-titulo: #1a1a1a;
-    --texto-corpo: #5c616a;
-    --cor-borda: rgba(177, 140, 67, 0.3);
+/* Variáveis para o Modo Escuro */
+[data-theme="dark"] {
+    --bg-color: #121824;
+    --card-bg: #1e293b;
+    --text-color: #cbd5e1;
+    --title-color: #f8fafc;
+    --accent-color: #60a5fa;
+    --border-color: #334155;
 }
 
-/* ==========================================================================
-   MAPEAMENTO DAS VARIÁVEIS NOS ELEMENTOS EXISTENTES
-   ========================================================================== */
 body {
-    background-color: var(--fundo-principal);
-    color: var(--texto-titulo);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Aplica o fundo dos blocos e botões de forma dinâmica */
-.stat-card, 
-.conteudo-blog, 
-.lista-atributos li, 
-.btn-toggle-tema, 
-.btn-curtir {
-    background-color: var(--fundo-card);
-    border: 1px solid var(--cor-borda);
-    color: var(--texto-titulo);
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--title-color);
 }
 
-/* Mapeia as cores de destaque e marcas de texto */
-.stat-numero, 
-.num-lista, 
-.badge, 
-.tag-imagem, 
-.destaque-titulo {
-    color: var(--cor-ouro);
-    transition: color 0.3s ease;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-/* Mapeia os textos secundários e descrições */
-.subtitulo, 
-.conteudo-blog p, 
-.texto-lista p, 
-footer p {
-    color: var(--texto-corpo);
-    transition: color 0.3s ease;
+header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
+}
+
+.author {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+#theme-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1);
 }

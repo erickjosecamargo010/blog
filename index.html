@@ -3,95 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CR7: O Maior de Todos os Tempos</title>
-    <!-- Link da fonte corrigido -->
-    <link href="https://googleapis.com" rel="stylesheet">
-    <!-- Arquivo CSS externo -->
+    <title>Blog do Erick J.</title>
+    <!-- Importação das fontes do Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Camada dedicada estritamente ao fundo da página -->
-    <div class="fundo-pagina" id="fundo-ambiente"></div>
-
-    <!-- Botão para alternar Tema Escuro e Claro -->
-    <button class="btn-toggle-tema" onclick="alternarTema()" aria-label="Alternar modo escuro e claro">
-        <span>🌓</span> <span id="texto-tema">Modo Escuro</span>
-    </button>
-
-    <!-- Botão de Curtir -->
-    <button class="btn-curtir" onclick="curtirConteudo()" aria-label="Curtir o conteúdo">
-        <span class="icone-coracao">❤️</span>
-        <span id="contador-curtidas">0</span>
-    </button>
-
-    <div class="container">
-        <header>
-            <span class="badge">The GOAT</span>
-            <h1>Cristiano Ronaldo<br><span class="destaque-titulo">O Maior da História</span></h1>
-            <p class="subtitulo">A ciência, os números e a determinação por trás da lenda.</p>
-        </header>
-
-        <div class="imagem-container">
-            <img src="Gemini_Generated_Image_ouocryouocryouoc (3).png" alt="Cristiano Ronaldo em campo">
-            <div class="tag-imagem">CR7 Legend</div>
+    <header>
+        <div class="container header-content">
+            <h1>Blog do Erick J.</h1>
+            <button id="theme-toggle" aria-label="Alternar modo claro e escuro">🌓</button>
         </div>
+    </header>
 
-        <section class="stats-grid">
-            <div class="stat-card">
-                <span class="stat-numero">+890</span>
-                <span class="stat-label">Gols na Carreira</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-numero">5x</span>
-                <span class="stat-label">Champions League</span>
-            </div>
-            <div class="stat-card">
-                <span class="stat-numero">5x</span>
-                <span class="stat-label">Bolas de Ouro</span>
-            </div>
-        </section>
+    <main class="container">
+        <article class="post-card">
+            <h2>Bem-vindo ao meu novo blog estilizado</h2>
+            <p class="author">Por Erick J.</p>
+            <p>Este layout conta com modo escuro acessível, tipografia refinada e alta performance de leitura.</p>
+        </article>
+    </main>
 
-        <main>
-            <article class="conteudo-blog">
-                <h2>Fatos Incontestáveis vs. Opinião</h2>
-                <p>
-                    Enquanto muitos argumentam sobre o talento natural de Lionel Messi, Cristiano Ronaldo prova que a determinação, o foco e o trabalho duro constroem o atleta perfeito. CR7 não é apenas um jogador de futebol; ele é uma máquina de quebrar recordes in múltiplas ligas.
-                </p>
-
-                <h3>3 Razões que o Tornam Superior</h3>
-                <ul class="lista-atributos">
-                    <li>
-                        <div class="num-lista">01</div>
-                        <div class="texto-lista">
-                            <strong>Dinamismo em várias ligas</strong>
-                            <p>Provou seu valor e foi campeão absoluto na Inglaterra, Espanha e Itália, dominando cenários e estilos completamente diferentes.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="num-lista">02</div>
-                        <div class="texto-lista">
-                            <strong>O Rei da Champions</strong>
-                            <p>Maior artilheiro isolado da história da maior e mais difícil competição de clubes do planeta.</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="num-lista">03</div>
-                        <div class="texto-lista">
-                            <strong>Mentalidade Inabalável</strong>
-                            <p>Capacidade única de decidir finais e jogos sob extrema pressão de forma consistente ao longo de duas décadas.</p>
-                        </div>
-                    </li>
-                </ul>
-            </article>
-        </main>
-
-        <footer>
-            <p>© Blog CR7 — Criado para homenagear uma lenda do esporte.</p>
-        </footer>
-    </div>
-
-    <!-- Arquivo JavaScript externo -->
     <script src="script.js"></script>
 </body>
 </html>
